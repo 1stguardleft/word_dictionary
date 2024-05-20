@@ -96,7 +96,7 @@ def seperate_terms() -> int:
                         for idx, result_str in enumerate(results):
                             result = result_str.split(",")
 
-                            if  len(result) == 9:
+                            if  len(result) >= 9:
                                 'Step 2.5 SEPERATION 테이블에 데이터 저장'
                                 cursor.execute(
                                     '''
@@ -145,7 +145,7 @@ def translate_terms_to_eng() -> int:
                 
                     definition : str
                     trans_word : str
-
+                    
                     # 여러 개의 사전적 정의가 존재시 최초의 정의만을 취함.
                     for element in iter_element:
                         definition = element.find("definition").text # name태그 값을 저장합니다
@@ -196,7 +196,6 @@ def abbreviate_terms() -> int:
     return 0
 
 if __name__ == '__main__':
-
     init()
     seperate_terms()
     translate_terms_to_eng()

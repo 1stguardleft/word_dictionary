@@ -23,7 +23,7 @@ select * from source;
 select * from seperation;
 select * from term;
 
-
+select * from sap_term;
 
 select distinct term_name
   from seperation
